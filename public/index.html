@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation Chalet - Séjour à la montagne</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <div class="hero">
+        <h1>🏔️ Chalet des Alpes</h1>
+        <p>Votre refuge en montagne pour des vacances inoubliables</p>
+    </div>
+    
+    <div class="container">
+        <div class="chalet-info" id="chaletInfo"></div>
+        
+        <div class="booking-form">
+            <h2>📅 Réservez votre séjour</h2>
+            
+            <form id="reservationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" required placeholder="Dupont">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" required placeholder="Jean">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telephone">Téléphone *</label>
+                        <input type="tel" id="telephone" required placeholder="+33 6 12 34 56 78">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required placeholder="jean@example.com">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dateDebut">Date d'arrivée *</label>
+                        <input type="date" id="dateDebut" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dateFin">Date de départ *</label>
+                        <input type="date" id="dateFin" required>
+                    </div>
+                </div>
+                
+                <div class="prix-info" id="prixInfo"></div>
+                
+                <div class="stripe-section">
+                    <label>Informations de paiement</label>
+                    <div id="card-element" class="card-element"></div>
+                    <div id="card-errors" class="card-errors" role="alert"></div>
+                </div>
+                
+                <button type="submit" id="submitBtn">
+                    <span id="btnText">Payer et Réserver</span>
+                    <span id="btnLoader" class="loader" style="display: none;"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
